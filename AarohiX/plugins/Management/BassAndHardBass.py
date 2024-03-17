@@ -26,7 +26,7 @@ async def bass_boost_command(client, message):
 
 def apply_bass_boost(audio_path):
     audio = AudioSegment.from_file(audio_path)
-    boosted_audio = audio.low_pass_filter(100).high_pass_filter(30).apply_gain(10)
+    boosted_audio = audio.low_pass_filter(50).high_pass_filter(20).apply_gain(10)
     boosted_audio_path = "dilboosted.mp3"
     boosted_audio.export(boosted_audio_path, format="mp3")
 
